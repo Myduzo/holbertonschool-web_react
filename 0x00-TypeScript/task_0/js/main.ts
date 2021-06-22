@@ -13,13 +13,13 @@ const student1: Student = {
 };
 
 const student2: Student = {
-  firstName: 'Phiby',
+  firstName: 'Phibby',
   lastName: 'Buffey',
   age: 21,
   location: 'France',
 };
 
-let studentsList: Array<Student> = [student1, student2];
+const studentsList: Array<Student> = [student1, student2];
 
 // Vanilla JS
 const table: HTMLTableElement = document.createElement('table');
