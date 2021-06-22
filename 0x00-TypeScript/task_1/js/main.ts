@@ -15,7 +15,7 @@ interface Directors extends Teacher {
 
 /* TASK 3 */
 interface printTeacherFunction {
-  (firstName: string, lastName: string):string;
+  (firstName: string, lastName: string): string;
 }
 
 function printName(firstName: string, lastName: string) {
