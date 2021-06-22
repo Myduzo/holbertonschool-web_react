@@ -1,3 +1,4 @@
+// Task 1
 interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
@@ -6,6 +7,7 @@ interface Teacher {
   [propName: string]: any;
 }
 
+/* TEST FOR TASK 1
 const teacher3: Teacher = {
   firstName: 'John',
   fullTimeEmployee: false,
@@ -15,3 +17,4 @@ const teacher3: Teacher = {
 };
 
 console.log(teacher3);
+*/
