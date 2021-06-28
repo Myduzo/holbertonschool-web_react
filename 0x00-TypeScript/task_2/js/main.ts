@@ -44,8 +44,24 @@ export function createEmployee(salary: number | string) {
   return new Director();
 }
 
+/* TASK 6 */
+export function isDirector(employee: DirectorInterface | TeacherInterface): boolean {
+  return (employee instanceof Director);
+}
+
+export function executeWork(employee: DirectorInterface | TeacherInterface):string {
+  if (employee instanceof Director) return employee.workDirectorTasks();
+  else if (employee instanceof Teacher) return employee.workTeacherTasks();
+}
+
 /* TEST FOR TASK 5
 console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee('$500'));
+*/
+/* TEST FOR TASK 6
+console.log(isDirector(createEmployee(200)));
+executeWork(createEmployee(200));
+console.log(isDirector(createEmployee(1000)));
+executeWork(createEmployee(1000));
 */
