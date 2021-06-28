@@ -24,6 +24,24 @@ function printName(firstName: string, lastName: string) {
 
 export const printTeacher: printTeacherFunction = printName;
 
+/* TASK 4 */
+class StudentClass {
+  firstName: string;
+  lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework() {
+    return 'Currently working';
+  }
+
+  displayName() {
+    return this.firstName;
+  }
+}
 
 /* TEST FOR TASK 1
 const teacher3: Teacher = {
@@ -51,4 +69,10 @@ console.log(director1);
 
 /* TEST FOR TASK 3
 console.log(printTeacher("John", "Doe")); 
+*/
+
+/* TEST FOR TASK 4
+const student = new StudentClass("Joey", "Tribiony");
+console.log(student.workOnHomework());
+console.log(student.displayName());
 */
