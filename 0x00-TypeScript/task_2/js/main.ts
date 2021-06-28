@@ -54,6 +54,13 @@ export function executeWork(employee: DirectorInterface | TeacherInterface):stri
   else if (employee instanceof Teacher) return employee.workTeacherTasks();
 }
 
+type Subjects = 'Math' | 'History';
+
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') return 'Teaching Math';
+  else if (todayClass === 'History') return 'Teaching History';
+}
+
 /* TEST FOR TASK 5
 console.log(createEmployee(200));
 console.log(createEmployee(1000));
@@ -64,4 +71,8 @@ console.log(isDirector(createEmployee(200)));
 executeWork(createEmployee(200));
 console.log(isDirector(createEmployee(1000)));
 executeWork(createEmployee(1000));
+*/
+/* TEST FOR TASK 7
+console.log(teachClass('Math'));
+console.log(teachClass('History'));
 */
