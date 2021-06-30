@@ -36,3 +36,8 @@ label {
   text-align: center;
   font-size: 20px;
 }
+
+#close_icon {
+  width: 22px;
+  height: 22px;
+}
