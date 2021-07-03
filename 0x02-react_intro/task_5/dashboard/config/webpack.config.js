@@ -6,15 +6,40 @@ const path = require('path');
 module.exports = {
   // Path to your entry point. From this file Webpack will begin its work
   entry: './src/index.js',
-
-  // Path and filename of your result bundle.
-  // Webpack will bundle all JavaScript into this file
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '',
-    filename: 'bundle.js'
+    path: path.resolve('./dist'),
+    filename: 'bundle.js',
   },
-
-  // Default mode for Webpack is production.
-  mode: 'development'
+  mode: 'development',
+  devServer: {
+    hot: true,
+    contentBase: path.resolve('./dist'),
+    compress: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          "file-loader",
+          {
+            loader: "image-webpack-loader",
+            options: {
+              bypassOnDebug: true,
+              disable: true,
+            },
+          },
+        ],
+      },
+    ],
+  },
 };
