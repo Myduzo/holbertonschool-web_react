@@ -5,17 +5,17 @@ import CourseListRow from './CourseListRow'
 
 describe('renders CourseListRow components', () => {
   it('When isHeader is true without TextSecondCell', () => {
-    const wrapper = shallow(<CourseListRow isHeader={true} textFirstCell={'test'} />);
+    const wrapper = shallow(<CourseListRow isHeader={true} textFirstCell='test' />);
     expect(wrapper.find('th').props()).to.have.property('colSpan', '2');
   })
 
   it('When isHeader is true with TextSecondCell', () => {
-    const wrapper = shallow(<CourseListRow isHeader={true} textFirstCell={'1st test'} textSecondCell={'2nd test'} />);
+    const wrapper = shallow(<CourseListRow isHeader={true} textFirstCell='1st test' textSecondCell='2nd test' />);
     expect(wrapper.find('th')).to.have.length(2);
   })
 
   it('', () => {
-    const wrapper = shallow(<CourseListRow isHeader={false} textFirstCell={'1st test'} textSecondCell={'2nd text'} />)
+    const wrapper = shallow(<CourseListRow isHeader={false} textFirstCell='1st test' textSecondCell='2nd text' />)
     expect(wrapper.find('td')).to.have.length(2);
     expect(wrapper.find('tr')).to.have.length(1);
   })

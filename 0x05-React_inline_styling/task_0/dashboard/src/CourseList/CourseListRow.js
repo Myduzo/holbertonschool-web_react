@@ -1,42 +1,39 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-class CourseListRow extends React.Component {
+function CourseListRow({ isHeader, textFirstCell, textSecondCell }) {
+  let headerStyle = { backgroundColor: '#deb5b545' };
+  let rowStyle = { backgroundColor: '#f5f5f5ab' };
+  const pick = isHeader ? headerStyle : rowStyle;
 
-  headerStyle = { backgroundColor: '#deb5b545' };
-  rowStyle = { backgroundColor: '#f5f5f5ab' };
-  pick = this.props.isHeader ? this.headerStyle : this.rowStyle;
-
-  render() {
-    if (this.props.isHeader) {
-      if (!this.props.textSecondCell) {
-        return (
-          <tr style={this.pick}>
-            <th colSpan='2'>{this.props.textFirstCell}</th>
-          </tr>
-        );
-      } else {
-        return (
-          <tr style={this.pick}>
-            <th>{this.props.textFirstCell}</th>
-            <th>{this.props.textSecondCell}</th>
-          </tr>
-        );
-      }
+  if (isHeader) {
+    if (!textSecondCell) {
+      return (
+        <tr style={pick}>
+          <th colSpan='2'>{textFirstCell}</th>
+        </tr>
+      );
     } else {
       return (
-        <tr style={this.pick}>
-          <td>{this.props.textFirstCell}</td>
-          <td>{this.props.textSecondCell}</td>
+        <tr style={pick}>
+          <th>{textFirstCell}</th>
+          <th>{textSecondCell}</th>
         </tr>
       );
     }
+  } else {
+    return (
+      <tr style={pick}>
+        <td>{textFirstCell}</td>
+        <td>{textSecondCell}</td>
+      </tr>
+    );
   }
 }
 
 CourseListRow.propTypes = {
   isHeader: PropTypes.bool,
-  textFirstCell: PropTypes.string.isRequigrey,
+  textFirstCell: PropTypes.string.isRequired,
   textSecondCell: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
