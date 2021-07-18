@@ -4,12 +4,12 @@ import NotificationItem from'./NotificationItem'
 import PropTypes from 'prop-types'
 import NotificationItemShape from './NotificationItemShape'
 import { StyleSheet, css } from 'aphrodite'
+import classNames from 'classnames'
 
 const btnStyle = {
   position: 'absolute',
   border: 'none',
   background: 'none',
-  top: '1em',
   right: '1em',
 };
 
@@ -24,17 +24,20 @@ class Notifications extends React.Component {
     return false;
   }
 
+  notifText = this.props.displayDrawer === 'true' ? css(styles.upperText) : null;
+
   render() {
+    const classGroup = classNames(this.notifText, css(styles.menuStyle));
     return (
       <div>
-        <div className={css(styles.menuStyle)} id='menuItem'>Your notifications</div>
+        <div className={classGroup} id='menuItem'>Your notifications</div>
         {this.props.displayDrawer ? 
           (<div className={css(styles.notifStyle)} id='Notifications'>
             <button style={btnStyle} aria-label='Close' onClick={() => console.log('Close button has been clicked')}>
               <img src={close_icon} className={css(styles.iconStyle)} alt='close icon'></img>
             </button>
             <p>Here is the list of notifications</p>
-            <ul>
+            <ul className={css(styles.ulStyle)}>
               {this.props.listNotifications.length === 0 ? <NotificationItem value='No new notification for now' /> : <></>}
               {this.props.listNotifications.map((notif) => (<NotificationItem key={notif.id} type={notif.type} value={notif.value} html={notif.html} />))}
             </ul>
@@ -53,14 +56,21 @@ const styles = StyleSheet.create({
     width: '30rem',
     position: 'absolute',
     right: 0,
+    '@media (max-width: 900px)': {
+      position: 'relative',
+      width: '100%',
+      border: 'none',
+      padding: '0',
+      display: 'flexbox',
+      right: 0,
+      fontSize: '20px',
+    }
   },
-  
-  defaultStyle: {
-    color: 'blue',
-  },
-  
-  urgentStyle: {
-    color: 'red',
+
+  ulStyle: {
+    '@media (max-width: 900px)': {
+      paddingLeft: '0'
+    }
   },
   
   iconStyle: {
@@ -70,6 +80,12 @@ const styles = StyleSheet.create({
 
   menuStyle: {
     textAlign: 'right',
+  },
+
+  upperText: {
+    '@media (max-width: 900px)': {
+      display: 'none'
+    }
   }
 });
 

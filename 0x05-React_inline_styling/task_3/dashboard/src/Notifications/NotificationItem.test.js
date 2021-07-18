@@ -25,7 +25,7 @@ describe('render NotificationItem component', () => {
 
   it('renders correct html prop', () => {
     const wrapper = shallow(<NotificationItem html={{ __html: '<u>test</u>' }} />);
-    expectChai(wrapper.html()).to.equal('<li class=\"urgentStyle_137u7ef\"><u>test</u></li>');
+    expectChai(wrapper.html()).to.equal('<li class="urgentStyle_137u7ef notifStyle_1oy6wfm"><u>test</u></li>');
   })
 
   it('Check the spy is being called with the right message', () => {

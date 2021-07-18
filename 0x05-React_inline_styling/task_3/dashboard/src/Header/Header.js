@@ -27,11 +27,12 @@ const styles = StyleSheet.create( {
   },
   h1Style: {
     display: 'inline',
-    marginLeft: '100px',
-    marginTop: '120px',
+    marginLeft: '70px',
+    marginTop: '170px',
     position: 'absolute',
     '@media (max-width: 900px)': {
       marginLeft: 'auto',
+      marginTop: '100px',
     },
     '@media (max-width: 400px)': {
       fontSize: '30px',

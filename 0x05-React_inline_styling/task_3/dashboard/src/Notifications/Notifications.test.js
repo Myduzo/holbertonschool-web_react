@@ -50,7 +50,7 @@ describe('Test Notifications renders', () => {
 
   it('renders the right html', () => {
     const wrapper = shallow(<Notifications displayDrawer={true} />);
-    expectChai(wrapper.find(NotificationItem).first().html()).to.equal('<li class=\"urgentStyle_137u7ef\">No new notification for now</li>');
+    expectChai(wrapper.find(NotificationItem).first().html()).to.equal('<li class=\"urgentStyle_137u7ef notifStyle_1oy6wfm\">No new notification for now</li>');
   })
 
   it('Check menu item is being displayed when (displayDraw=false)', () => {
@@ -88,7 +88,7 @@ describe('Test Notifications renders', () => {
 
   it('verify that when listNotifications is empty the message Here is the list of notifications is not displayed, but No new notification for now is', () => {
     const wrapper = shallow(<Notifications displayDrawer={true} />);
-    expectChai(wrapper.find(NotificationItem).first().html()).to.equal('<li class="urgentStyle_137u7ef">No new notification for now</li>');
+    expectChai(wrapper.find(NotificationItem).first().html()).to.equal('<li class="urgentStyle_137u7ef notifStyle_1oy6wfm">No new notification for now</li>');
   })
 
   it('mockup the console.log function', () => {
