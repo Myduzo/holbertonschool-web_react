@@ -42,8 +42,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Notifications listNotifications={listNotifications} displayDrawer={displayDrawer}
-          handleDisplayDrawer={this.handleDisplayDrawer} handleHideDrawer={this.handleHideDrawer}>
-        </Notifications>
+                       handleDisplayDrawer={this.handleDisplayDrawer} handleHideDrawer={this.handleHideDrawer}></Notifications>
         <div className="App">
           <Header></Header>
           <div>
