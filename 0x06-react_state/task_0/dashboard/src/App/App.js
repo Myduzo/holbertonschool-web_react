@@ -24,22 +24,10 @@ const listNotifications = [
 class App extends React.Component {
   constructor(props) {
     super(props);
-    //   this.handleClick = this.handleClick.bind(this);
     this.handleDisplayDrawer = this.handleDisplayDrawer.bind(this);
     this.handleHideDrawer = this.handleHideDrawer.bind(this);
     this.state = { displayDrawer: false };
   }
-
-  // componentDidMount() {
-  //   document.addEventListener('keydown', this.handleClick);
-  // }
-
-  // handleClick(event) {
-  //   if (event.keyCode === 72 && event.ctrlKey) { // ASCII 72 = h
-  //     alert('Logging you out');
-  //     this.props.logOut();
-  //   }
-  // }
 
   handleDisplayDrawer() {
     this.setState({ displayDrawer: true });
