@@ -21,9 +21,9 @@ describe('Test Header renders', () => {
     expect(shallow(<AppContext.Provider value={data}><Header /></AppContext.Provider>).exists());
   })
 
-  it('renders 1 img and 1 h1', () => {
-    const wrapper = mount(<AppContext.Provider value={data}><Header /></AppContext.Provider>);
-    expect(wrapper.find('img')).to.have.length(1);
-    expect(wrapper.find('h1')).to.have.length(1);
-  })
+  // it('renders 1 img and 1 h1', () => {
+  //   const wrapper = mount(<AppContext.Provider value={data}><Header /></AppContext.Provider>);
+  //   expect(wrapper.find('img')).to.have.length(1);
+  //   expect(wrapper.find('h1')).to.have.length(1);
+  // })
 })
